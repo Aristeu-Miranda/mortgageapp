@@ -34,7 +34,7 @@ const formSchema = z.object({
   }),
 });
 
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function Calculation({ onSubmit }: any) {
 
   const form = useForm<z.infer<typeof formSchema>>({

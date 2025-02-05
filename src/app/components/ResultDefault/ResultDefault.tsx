@@ -8,7 +8,7 @@ export default function ResultDefault() {
             </div>
             <div className="w-full text-center space-y-7">
                 <p className="text-xl font-bold text-white ">Results shown here</p>
-                <p className="text-sm font-light text-slatetwo">Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
+                <p className="text-sm font-light text-slatetwo">{`Complete the form and click 'calculate repayments' to see what your monthly repayments would be.`}</p>
             </div>
         </section>
     )

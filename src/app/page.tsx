@@ -5,6 +5,8 @@ import Results from "./components/Results/Results";
 import { useState } from "react";
 import { z } from "zod";
 
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const formSchema = z.object({
   amount: z.string().transform((val) => Number(val)),
   years: z.string().transform((val) => Number(val)),
@@ -17,7 +19,6 @@ type FormData = z.infer<typeof formSchema>;
 export default function Home() {
   const [formData, setFormData] = useState<FormData | null>(null);
   
-  console.log(formData)
   return (
     <>
 <section className="w-full h-screen flex items-center justify-center">
