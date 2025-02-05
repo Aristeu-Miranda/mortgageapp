@@ -6,13 +6,19 @@ import { Circle } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+export interface RadioProps extends React.InputHTMLAttributes<HTMLInputElement>{
+  active?: boolean
+}
+
 const RadioGroup = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>
->(({ className, ...props }, ref) => {
+>(({ className, value, onValueChange, ...props }, ref) => {
   return (
     <RadioGroupPrimitive.Root
       className={cn("grid gap-2", className)}
+      value={value}
+      onValueChange={onValueChange}
       {...props}
       ref={ref}
     />
@@ -28,7 +34,7 @@ const RadioGroupItem = React.forwardRef<
     <RadioGroupPrimitive.Item
       ref={ref}
       className={cn(
-        "h-4 w-4 rounded-full border border-slatefor text-lime bg-slateone shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+        "h-4 w-4 rounded-full border border-slatefor text-lime bg-white shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
         className
       )}
       {...props}
